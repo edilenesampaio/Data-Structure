@@ -1,25 +1,34 @@
 """Functions to parse a file containing villager data."""
 
-
 def all_species(filename):
     """Return a set of unique species in the given file.
 
     Return:
         - set[str]: a set of strings
     """
+    
+    file = open(filename)
+    for line in file:
+        species = line.rstrip().split("|")[1]
+        unique_species = []
+        unique_species.append(species)
+        print()
+    unique_species = set(unique_species)
 
-    unique_species = set
-    data = open(filename)
-    for line in data:
-        species = line.rstripes().split("|")
-
-        unique_species.add(species)
-
-
+        
     print(unique_species)
-    
-    
+    file.close()      
 
+    
+    # unique_species = set([species])
+    # unique_species = 
+    # data = set(["villagers.csv"])
+
+    return unique_species
+
+ 
+
+all_species("villagers.csv")
 
 def get_villagers_by_species(filename, search_string="All"):
     """Return a list of villagers' names by species.
