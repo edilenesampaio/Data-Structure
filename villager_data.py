@@ -80,25 +80,37 @@ def all_names_by_hobby(filename):
     fashion = []
     play = []
     names = []
-
+    
     data = open(filename)
     for line in data:
         if line.rstrip().split("|")[3]== "Fitness":
-            fitness = fitness.append(line.rstrip().split("|")[0])
+            names_from_data = line.rstrip().split("|")[0]
+            fitness.append(names_from_data)
+            names.append(fitness)
         elif line.rstrip().split("|")[3]== "Nature":
-            nature = nature.append(line.rstrip().split("|")[0])
+            names_from_data = line.rstrip().split("|")[0]
+            nature.append(names_from_data)
+            names.append(nature)
         elif line.rstrip().split("|")[3]== "Education":
-            education = education.append(line.rstrip().split("|")[0])
+            names_from_data = line.rstrip().split("|")[0]
+            education.append(names_from_data)
+            names.append(education)
         elif line.rstrip().split("|")[3]== "Music":
-            music = music.append(line.rstrip().split("|")[0])
+            names_from_data = line.rstrip().split("|")[0]
+            music.append(names_from_data)
+            names.append(music)
         elif line.rstrip().split("|")[3]== "Fashion":
-            fashion = fashion.append(line.rstrip().split("|")[0])
+            names_from_data = line.rstrip().split("|")[0]
+            fashion.append(names_from_data)
+            names.append(fashion)
         elif line.rstrip().split("|")[3]== "Play":
-            play = play.append(line.rstrip().split("|")[0])
-        print("hello")
+            names_from_data = line.rstrip().split("|")[0]
+            play.append(names_from_data)
+            names.append(play)
+        
     data.close()
 
-    names.append(fitness)
+    
     print(names)
     # return []
 
@@ -139,7 +151,7 @@ def find_motto(filename, villager_name):
     """
 
     # TODO: replace this with your code
-
+    
 
 def find_likeminded_villagers(filename, villager_name):
     """Return a set of villagers with the same personality as the given villager.
